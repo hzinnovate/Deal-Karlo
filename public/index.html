@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Deal Karlo</title>
+    <link rel="shortcut icon" href="./assets/icons/icon.png" />
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <script src="./assets/sweetAlert/sweetAlert.js"></script>
+    <script src="./assets/jquery/jqueryV3.3.1.js"></script>
+    <link href="./assets/fontawesome/fontawesome-5.7.1/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/chatStyle.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="manifest" href="./manifest.json">
+</head>
+
+<body style="background-color: rgb(33, 33, 33) !important;padding: 0px; margin: 0px;">
+    <nav id="pcNav" class="col-lg-12"
+        style="padding: 10px; background-color: white; position: fixed; top: 0px; z-index: 6;">
+        <div id="nav" class="col-lg-10 offset-lg-1">
+            <img src="./assets/logo/logo.png" class="col-lg-3">
+            <input class="col-lg-4"
+                style="     height: 30px;margin-left: 5px; margin-right: 5px; border-radius: 50px;border: 1px solid;"
+                type="search" id="searchBar" onInput="srch()" placeholder="Find Cars, Mobile Phones and more...">
+            <select id="searchercat" onChange="srchByCat()"
+                style="background-color: white !important; height: 30px;margin-left: 5px; margin-right: 5px; border-radius: 50px;border: 1px solid;"
+                class="col-lg-2">
+                <option selected value="all">All</option>
+                <option value="Mobiles">Mobiles</option>
+                <option value="Vehicles">Vehicles</option>
+                <option value="Bikes">Bikes</option>
+                <option value="Electronics">Electronics</option>
+            </select>
+        </div>
+    </nav>
+    <nav id="mbNav" class="col-12"
+        style="padding: 10px; background-color: white; position: fixed; top: 0px; z-index: 6;">
+        <div id="mbNavBar" class="col-12">
+            <img src="./assets/logo/logo.png" class="col-6 col-md-5">
+            <select id="mbSearchercat" onChange="srchByCat('mb')"
+                style="background-color: white !important; height: 30px;border-radius: 50px;border: 1px solid;"
+                class="col-4 col-md-5">
+                <option selected value="all">All</option>
+                <option value="Mobiles">Mobiles</option>
+                <option value="Vehicles">Vehicles</option>
+                <option value="Bikes">Bikes</option>
+                <option value="Electronics">Electronics</option>
+            </select>
+            <span id="action_menu_btn"><i id="menu" class="fas fa-bars"></i></span>
+            <div class="action_menu">
+                <ul id="navBtn">
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div id="ImgSlider" class="anim" style="position: relative;">
+        <img id="slide" src="./assets/slideImages/Slider1.jpg" style="width: 100%;">
+        <p id="name">Pakistan's No.1 Marketplace <br>
+            for buying & Selling </p>
+    </div>
+    <div id="body" style="background-color: white; padding: 0px; margin: 0px; padding-top: 20px;">
+        <div id="bodyHeader" class="row col-lg-10 offset-lg-1" style="color: white;">
+            <div class="col-lg-6">
+                <div style="width: 100%; margin: 5px;padding: 40px; background-color: rgb(33, 33, 33)">
+                    <img src="./assets/logo/buyNowLogo.png" style="float: right;">
+                    <h2 style="font-weight: bolder;">
+                        Search<br>
+                        and Buy
+                    </h2>
+                    <p>
+                        Lorem Ipsum is simply dummy text <br>
+                        of the printing and typesetting industry.
+                    </p>
+                    <button disabled
+                        style="background: none; border: 1px solid white; border-radius: 50px; padding: 10px; color:white;">
+                        Buy Now
+                    </button>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div style="width: 100%; margin: 5px;padding: 40px; background-color: rgb(33, 33, 33)">
+                    <img src="./assets/logo/sellnowlogo.png" style="float: right;">
+                    <h2 style="font-weight: bolder;">
+                        Upload<br>
+                        and Sell
+                    </h2>
+                    <p>
+                        Lorem Ipsum is simply dummy text <br>
+                        of the printing and typesetting industry.
+                    </p>
+                    <button onClick="showPopUp('popUpForPostAdd')"
+                        style="background: white; border: none; border-radius: 50px; padding: 10px; color:black;">
+                        Sell Now
+                    </button>
+                </div>
+            </div>
+        </div>
+        <br>
+        <input class="col-8 offset-2 mbSearchBar" style="     height: 30px;border-radius: 50px;border: 1px solid;"
+            type="search" id="mbSearchBar" onInput="srch('mb')" placeholder="Find Cars, Mobile Phones and more...">
+
+        <h2 id="heading" class="offset-1" style="padding: 30px; font-weight: bolder;">Top picks for you</h2>
+        <div id="MainPosts" class="row col-10 offset-1" style="color: rgb(0, 0, 0);padding: 0px; padding-bottom: 20px;">
+        </div>
+    </div>
+    <div id="footer" style="padding-top: 30px;background-color: rgb(33, 33, 33); color: white;"
+        class="col-lg-10 offset-lg-1">
+        <div class="col-lg-2">
+            <img src="./assets/logo/logoFooter.png">
+        </div>
+        <br><br>
+        <div class="row col-lg-12">
+            <div class="col-lg-4">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit enim error sit veniam tempora
+                    mollitia doloribus iusto. Suscipit, inventore eaque eos quo illum quia nulla eveniet odit. Facere, a
+                    accusamus?
+                </p>
+                <br>
+                <p>
+                    Street Name, Katachi - Pakistan
+                </p>
+                <br>
+                <p>
+                    &copy; 2018 DealKarlo.com, All Rights Reserved.
+                </p>
+            </div>
+            <div class="col-lg-4">
+                <p>
+                    If you have a particular query,
+                    please select the concerned department:
+                    <br><br>
+                    Exports
+                    exports@dealkarlo.com
+                    <br><br>
+                    Preforms
+                    performs@dealkarlo.com
+                    <br><br>
+                    Consumer
+                    info@dealkarlo.com
+                </p>
+            </div>
+            <div class="col-lg-4">
+                <p>
+                    Get in touch:<br>
+                    T: 000 - 0000 0000<br>
+                    E: contact@dealkarlo.com<br>
+                    <br>
+                    Follow us on
+                </p>
+                <p>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div id="popUpForPostAdd" style="display: none;">
+        <div
+            style="position: fixed;top: 0px;width: 100%; height: 100vh; background-color: rgba(0, 0, 0, 0.774);z-index: 10;">
+        </div>
+        <div class="col-10 offset-1 col-lg-6 offset-lg-3"
+            style="position: fixed;background-color: white;top: 100px; padding: 20px; z-index: 11;">
+            <button onClick="hidePopUp('popUpForPostAdd')"
+                style="border: none; border-radius: 100px; background-color: rgb(33,33,33); height: 30px;width: 30px;color: white;position: absolute; top: -15px; right: -15px; font-weight: bolder;">X</button>
+            <select id="postAddCatogery" class="col-lg-6 offset-lg-3"
+                style="height: 30px;border-radius: 50px;border: 1px solid;">
+                <option selected value=null>Select Catogery</option>
+                <option value="Mobiles">Mobiles</option>
+                <option value="Vehicles">Vehicles</option>
+                <option value="Bikes">Bikes</option>
+                <option value="Electronics">Electronics</option>
+            </select>
+            <br><br>
+            <div class="row">
+                <div class="col-12 col-lg-7">
+
+                    <div class="col-12 col-lg-12">
+                        <input type="text" id="postAddName" placeholder="Product name"
+                            style="height: 30px;width: 100%;border: none;border-bottom:1px solid;">
+                    </div>
+                    <div class="col-12 col-lg-12">
+                        <input type="text" id="postAddModule" placeholder="Product Model"
+                            style="height: 30px;width: 100%;border: none;border-bottom:1px solid;">
+                    </div>
+                    <div class="col-12 col-lg-12">
+                        <input type="number" id="postAddPrice" placeholder="Price"
+                            style="height: 30px;width: 100%;border: none;border-bottom:1px solid;">
+                    </div>
+                    <div class="col-12 col-lg-12">
+                        <input type="number" id="postAddYear" placeholder="Year of manufecture"
+                            style="height: 30px;width: 100%;border: none;border-bottom:1px solid;">
+                    </div>
+                </div>
+                <!-- </div> -->
+                <div class="col-12 col-lg-5">
+                    <div class="col-12 col-lg-12">
+                        <textarea id="postAddDescription" placeholder="Details...." style="width: 100%;"></textarea>
+                    </div>
+                    <div class="upload-btn-wrapper col-12 col-lg-12">
+                        <button class="btn col-12 col-lg-12">Upload Image</button>
+                        <input id="postAddImage" type="file" name="myfile" />
+                    </div>
+                    <br>
+                    <button onClick="addPost('popUpForPostAdd')" class="col-12 col-lg-12"
+                        style="height: 40px;color: white; background-color: rgb(33,33,33);border-radius: 50px; ">Add
+                        Post</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="popUpForLogin" style="display: none;">
+        <div
+            style="position: fixed;top: 0px;width: 100%; height: 100vh; background-color: rgba(0, 0, 0, 0.774);z-index: 10;">
+        </div>
+        <div class="col-10 offset-1 col-lg-6 offset-lg-3"
+            style="position: fixed;background-color: white;top: 100px; padding: 20px; z-index: 11;">
+            <button onClick="hidePopUp('popUpForLogin')"
+                style="border: none; border-radius: 100px; background-color: rgb(33,33,33); height: 30px;width: 30px;color: white;position: absolute; top: -15px; right: -15px; font-weight: bolder;">X</button>
+            <br><br>
+            <div class="col-10 offset-1 col-lg-8 offset-lg-2">
+                <input id="signInEmail" type="email" placeholder="Email"
+                    style="width: 100%;height: 30px;border: none;border-bottom: 1px solid rgba(33, 33, 33, 0.74);">
+            </div>
+            <br>
+            <div class="col-10 offset-1 col-lg-8 offset-lg-2">
+                <input id="signInPassword" type="password" placeholder="password"
+                    style="width: 100%;height: 30px;border: none;border-bottom: 1px solid rgba(33, 33, 33, 0.74);">
+            </div>
+            <br>
+            <button onCLick="signIn('popUpForLogin')" class="col-5 offset-6 col-lg-2 offset-lg-8"
+                style="height: 40px;color: white; background-color: rgb(33,33,33);border-radius: 50px; ">Login</button>
+            <br>
+            <hr>
+            <div style="text-align: center;">
+                <button onClick="signUpSocial('facebook', 'popUpForLogin')"
+                    style="width: 200px;height: 40px;color: white; background-color: rgb(43, 58, 105);border-radius: 50px; ">Login
+                    with Facebook</button>
+                <button onClick="signUpSocial('google', 'popUpForLogin')"
+                    style="width: 200px;height: 40px;color: white; background-color: rgb(145, 22, 22);border-radius: 50px; ">Login
+                    with Gmail</button>
+            </div>
+        </div>
+    </div>
+    <div id="popUpForsignUp" style="display: none;">
+        <div
+            style="position: fixed;top: 0px;width: 100%; height: 100vh; background-color: rgba(0, 0, 0, 0.774);z-index: 10;">
+        </div>
+        <div class="col-10 offset-1 col-lg-6 offset-lg-3"
+            style="position: fixed;background-color: white;top: 100px; padding: 20px; z-index: 11;">
+            <button onClick="hidePopUp('popUpForsignUp')"
+                style="border: none; border-radius: 100px; background-color: rgb(33,33,33); height: 30px;width: 30px;color: white;position: absolute; top: -15px; right: -15px; font-weight: bolder;">X</button>
+            <br><br>
+            <div class="col-10 offset-1 col-lg-8 offset-lg-2">
+                <input id="userName" type="text" placeholder="User Name"
+                    style="width: 100%;height: 30px;border: none;border-bottom: 1px solid rgba(33, 33, 33, 0.74);">
+            </div>
+            <br>
+            <div class="col-10 offset-1 col-lg-8 offset-lg-2">
+                <input id="email" type="email" placeholder="Email"
+                    style="width: 100%;height: 30px;border: none;border-bottom: 1px solid rgba(33, 33, 33, 0.74);">
+            </div>
+            <br>
+            <div class="col-10 offset-1 col-lg-8 offset-lg-2">
+                <input id="password" type="password" placeholder="password"
+                    style="width: 100%;height: 30px;border: none;border-bottom: 1px solid rgba(33, 33, 33, 0.74);">
+            </div>
+            <br>
+            <div class="col-10 offset-1 col-lg-8 offset-lg-2">
+                <input id="confirmPassword" type="password" placeholder="Confirm Password"
+                    style="width: 100%;height: 30px;border: none;border-bottom: 1px solid rgba(33, 33, 33, 0.74);">
+            </div>
+            <br>
+            <button onClick="signUp('popUpForsignUp')" class="col-5 offset-6 col-lg-2 offset-lg-8"
+                style="height: 40px;color: white; background-color: rgb(33,33,33);border-radius: 50px; ">Sign
+                Up</button>
+            <br>
+        </div>
+    </div>
+    <div id="popUpForDetails" style="display: none;">
+    </div>
+    <div id="popUpForChat" style="display: none;padding: 0px;">
+        <div style=" position: fixed;top: 0px;width: 100%; height: 100vh; background-color: rgb(0, 0, 0);z-index: 13;">
+        </div>
+        <div class="col-10 offset-1 col-lg-6 offset-lg-3"
+            style="position: fixed;border-radius: 20px;background-color: rgb(255, 255, 255);top: 50px; padding: 0px; z-index: 14;">
+            <button onClick="hidePopUp('popUpForChat')"
+                style="border: none; border-radius: 100px; background-color: rgb(255, 255, 255);z-index: 15; height: 30px;width: 30px;color: rgb(0, 0, 0);position: absolute; top: -15px; right: -15px; font-weight: bolder;">X</button>
+            <div id="chat" style="display: block; border-radius: 20px; margin: 0px;">
+                <div class="chat">
+                    <div class="card">
+                        <div class="card-header msg_head">
+                            <div id="chatHeader" class="d-flex bd-highlight">
+                            </div>
+                        </div>
+                        <div id="chatBody" class="card-body msg_card_body">
+                        </div>
+                        <div id="textBar" class="card-footer">
+                            <div class="input-group">
+                                <textarea id="messege" class="form-control type_msg"
+                                    placeholder="Type your message..."></textarea>
+                                <div id="sendButtton" onClick="sendMessege(this)" class="input-group-append">
+                                    <span class="input-group-text send_btn"><i class="fas fa-location-arrow"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="loader" style="display: none;">
+        <div
+            style="position: fixed;top: 0px;width: 100%; height: 100vh; background-color: rgba(0, 0, 0, 0.774);z-index: 14;">
+        </div>
+        <div style="position: fixed;top: 150px; z-index: 15;"
+            class="col-lg-2 offset-lg-5 col-md-1 offset-md-5 col-1 offset-4">
+            <div class="col-lg-6 offset-lg-3 loader14">
+                <div class="loader-inner">
+                    <div class="box-1"></div>
+                    <div class="box-2"></div>
+                    <div class="box-3"></div>
+                    <div class="box-4"></div>
+                </div>
+                <span class="text">loading</span>
+            </div>
+        </div>
+        <br /><br />
+    </div>
+    </div>
+    <div id="navigatorBar" style="z-index: 50;height: 30px;color: white;width: 100%;position: fixed; top:0px;display: none;text-align: center;">
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/5.8.3/firebase.js"></script>
+    <script src="./assets/js/app.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/authontication.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#action_menu_btn').click(function () {
+                $('.action_menu').toggle();
+            });
+        });
+    </script>
+    <script>
+        let slideImage = document.getElementById('slide');
+        var counter = 0;
+
+        var slider = setInterval(() => {
+            switch (counter) {
+                case 0:
+                    slideImage.setAttribute('src', './assets/slideImages/Slider1.jpg');
+                    break;
+                case 1:
+                    slideImage.setAttribute('src', './assets/slideImages/Slider2.jpg');
+                    break;
+                case 2:
+                    slideImage.setAttribute('src', './assets/slideImages/Slider3.jpg');
+                    break;
+            }
+            counter++
+            if (counter > 3) {
+                counter = 0;
+            }
+
+        }, 3000)
+    </script>
+</body>
+
+</html>

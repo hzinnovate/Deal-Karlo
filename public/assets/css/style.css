@@ -1,0 +1,174 @@
+@font-face {
+    font-family: myFirstFont;
+    src: url(../fonts/aileron.regular.otf);
+  }
+  body::-webkit-scrollbar {
+    width: 0.5em;
+    border-radius: 10px;
+}
+body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+  border-radius: 10px;
+}
+
+*{
+font-family: myFirstFont;
+outline: none !important;
+}
+
+#name{
+    top: 35%;
+    left: 5%;
+    color: white;
+    font-size: 40px;
+    position: absolute;
+}
+#pcNav{
+  display: block;
+}
+#mbNav{
+  display: none;
+}
+#ImgSlider{
+  padding-top: 65px;
+}
+.mbSearchBar{
+  display: none;
+  }
+@media (max-width:1024px){
+    #name{
+        font-size: 25px;
+    }
+    #detailImg{
+        height: 250px !important;
+    }
+    #ImgSlider{
+      padding-top: 50px;
+    }
+}
+@media (max-width:1010px){
+  #pcNav{
+    display: none;
+  }
+  #mbNav{
+    display: block;
+  }
+  #detailImg{
+    height: 250px !important;
+}
+#ImgSlider{
+  padding-top: 70px;
+}
+.mbSearchBar{
+display: block;
+}
+}
+@media (max-width:650px){
+  #name{
+    font-size: 12px;
+}
+#ImgSlider{
+  padding-top: 50px;
+}
+#bodyHeader{
+  display: none;
+}
+#slide{
+height: 200px;;
+}
+}
+
+
+@keyframes animate{
+    from {opacity: 0.4}
+    to{opacity: 1;}
+    
+}
+
+.anim{
+    animation: animate;
+    animation-duration: 1.5s;
+}
+
+.upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+  }
+  
+  .btn {
+    border: 2px solid gray;
+    color: gray;
+    background-color: white;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .upload-btn-wrapper input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+  }
+
+  
+/********************  Preloader Demo-14 *******************/
+.loader14{width:90px;height:90px;}
+.loader14 .loader-inner{width:60px;height:60px;position:relative;}
+.loader14 .loader-inner div{content:"";width:16px;height:16px;border-radius:50%;background:#ffffff;position:absolute;top:10px;left:10px;transform-origin:20px 20px;-webkit-animation:loading-14 2s infinite cubic-bezier(.5,0,.5,1);animation:loading-14 2s infinite cubic-bezier(.5,0,.5,1)}
+.loader14 .loader-inner .box-2{top:10px;left:auto;right:10px;transform-origin:-4px 20px;-webkit-animation:loading-142 2s infinite cubic-bezier(.5,0,.5,1);animation:loading-142 2s infinite cubic-bezier(.5,0,.5,1)}
+.loader14 .loader-inner .box-3{top:auto;left:auto;right:10px;bottom:10px;transform-origin:-4px -4px;-webkit-animation:loading-143 2s infinite cubic-bezier(.5,0,.5,1);animation:loading-143 2s infinite cubic-bezier(.5,0,.5,1)}
+.loader14 .loader-inner .box-4{top:auto;bottom:10px;transform-origin:20px -4px;-webkit-animation:loading-144 2s infinite cubic-bezier(.5,0,.5,1);animation:loading-144 2s infinite cubic-bezier(.5,0,.5,1)}
+.loader14 .text{display:block;margin-left: 10px;font-size:12px;color:#ffffff;text-align:left}
+@-webkit-keyframes loading-14{
+	0%{transform:rotate(90deg)}
+	50%{transform:rotate(180deg)}
+	75%{transform:rotate(270deg)}
+	100%{transform:rotate(360deg)}
+}
+@keyframes loading-14{
+	0%{transform:rotate(90deg)}
+	50%{transform:rotate(180deg)}
+	75%{transform:rotate(270deg)}
+	100%{transform:rotate(360deg)}
+}
+@-webkit-keyframes loading-142{
+	0%,25%{transform:rotate(90deg)}
+	25%{transform:rotate(180deg)}
+	75%{transform:rotate(270deg)}
+	100%{transform:rotate(360deg)}
+}
+@keyframes loading-142{
+	0%,25%{transform:rotate(90deg)}
+	25%{transform:rotate(180deg)}
+	75%{transform:rotate(270deg)}
+	100%{transform:rotate(360deg)}
+}
+@-webkit-keyframes loading-143{
+	0%,25%{transform:rotate(90deg)}
+	50%{transform:rotate(270deg)}
+	100%{transform:rotate(360deg)}
+}
+@keyframes loading-143{
+	0%,25%{transform:rotate(90deg)}
+	50%{transform:rotate(270deg)}
+	100%{transform:rotate(360deg)}
+}
+@-webkit-keyframes loading-144{
+	0%,25%{transform:rotate(90deg)}
+	50%{transform:rotate(180deg)}
+	100%,75%{transform:rotate(360deg)}
+}
+@keyframes loading-144{
+	0%,25%{transform:rotate(90deg)}
+	50%{transform:rotate(180deg)}
+	100%,75%{transform:rotate(360deg)}
+}

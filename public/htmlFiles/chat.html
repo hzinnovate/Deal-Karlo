@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DealKarlo</title>
+    <link rel="shortcut icon" href="../assets/icons/icon.png" />
+     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/chatStyle.css">
+    <script src="../assets/jquery/jqueryV3.3.1.js"></script>
+    <link rel="stylesheet" href="../assets/fontawesome/fontawesome-5.7.1/css/all.css">
+    <style>
+    body,html{
+    height: 100%;
+    margin: 0;
+    background: rgb(33, 33, 33);
+   background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
+    background: linear-gradient(to top, rgb(134, 134, 134), rgb(33, 33, 33));
+}
+    </style>
+</head>
+<body>
+ <br><br>
+    <div id="pc">
+        <div class="container-fluid h-100">
+            <div class="row justify-content-center h-100">
+                <div class="col-md-4 col-xl-3 chat">
+                    <div class="card mb-sm-3 mb-md-0 contacts_card">
+                        <div class="card-header">
+                        </div>
+                        <div class="card-body contacts_body">
+                            <ul id="contact" class="contacts">
+                                <h2 align="center">No Users</h2>
+                            </ul>
+                        </div>
+                        <div class="card-footer"></div>
+                    </div>
+                </div>
+                <div class="col-md-8 col-xl-6 chat">
+                    <div class="card">
+                        <div class="card-header msg_head">
+                            <div id="chatHeader" class="d-flex bd-highlight">
+                            </div>
+                        </div>
+                        <div id="chatBody" class="card-body msg_card_body">
+                            <h4 align="center">Pleas select user first</h4>
+                        </div>
+                        <div id="textBar" class="card-footer">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="mobile" style="display: none;">
+        <div class="container-fluid h-100">
+            <div class="row justify-content-center h-100">
+                <div id="mbUsers" class="col-10 chat">
+                    <div class="card mb-sm-3 mb-md-0 contacts_card">
+                        <div class="card-header">
+                        </div>
+                        <div class="card-body contacts_body">
+                            <ul id="mbContact" class="contacts">
+                                <h2 align="center">No Users</h2>
+                            </ul>
+                        </div>
+                        <div class="card-footer"></div>
+                    </div>
+                </div>
+                <div id="mbChat" style="display: none;" class="col-10 chat">
+                    <div class="card">
+                        <div class="card-header msg_head">
+                            <div>
+                                <i onClick="goBack()" class="fas fa-backward"> Go Back</i>
+                            </div>
+                            <br>
+                            <div id="mbChatHeader" class="d-flex bd-highlight">
+                            </div>
+                        </div>
+                        <div id="mbChatBody" class="card-body msg_card_body">
+                            <h4 align="center">Pleas select user first</h4>
+                        </div>
+                        <div id="mbTextBar" class="card-footer">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/5.8.3/firebase.js"></script>
+    <script src="../assets/js/app.js"></script>
+    <script src="../assets/js/chat.js"></script>
+</body>
+
+</html>
